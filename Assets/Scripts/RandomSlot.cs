@@ -9,7 +9,6 @@ public class RandomSlot : MonoBehaviour
     public Sprite[] sprites;
     public float StopTime;
 
-    // Update is called once per frame
     void Update()
     {
         RandomingImage();
@@ -20,7 +19,6 @@ public class RandomSlot : MonoBehaviour
     {
 
         gameObject.GetComponent<UnityEngine.UI.Image>().sprite = sprites[Random.Range(0, sprites.Length)];
-
     }
 
     void EndRand()

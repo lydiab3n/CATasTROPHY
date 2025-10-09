@@ -5,20 +5,22 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
 
     public GameObject player;
-    
+
     private SpriteRenderer spriteRenderer;
-    
+    public Vector2 lastPosition;
+
     public Sprite upSprite;
     public Sprite downSprite;
     public Sprite leftSprite;
     public Sprite rightSprite;
-    
-    private Vector2 lastMovementDirection = Vector2.down;
+
+    // VOICE CONTROL
+    [HideInInspector] public Vector2 voiceMovement = Vector2.zero;
 
     void Start()
     {
         spriteRenderer = player.GetComponent<SpriteRenderer>();
-        
+
         // default facing down sprite
         if (downSprite != null)
             spriteRenderer.sprite = downSprite;
@@ -26,21 +28,33 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        
+        // switching between voice & keyboard
+        float horizontal;
+        float vertical;
+
+        if (voiceMovement != Vector2.zero)
+        {
+            horizontal = voiceMovement.x;
+            vertical = voiceMovement.y;
+        }
+        else
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
+        }
+
         Vector3 movement = new Vector3(horizontal, vertical, 0) * moveSpeed * Time.deltaTime;
         transform.position += movement;
-        
+        lastPosition = this.transform.position;
+
         updateSpriteDirection(horizontal, vertical);
+        // voiceMovement = Vector2.zero; //reset
     }
-    
+
     void updateSpriteDirection(float horizontal, float vertical)
     {
         if (horizontal != 0 || vertical != 0)
         {
-            lastMovementDirection = new Vector2(horizontal, vertical);
-            
             if (Mathf.Abs(horizontal) > Mathf.Abs(vertical))
             {
                 if (horizontal > 0)
@@ -68,5 +82,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void respawnAtCheckpoint()
+    {
+        transform.position = lastPosition;
+        //maybe reset animations etc
     }
 }

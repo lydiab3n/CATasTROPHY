@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class NPCInteraction : MonoBehaviour
 {
-    public GameObject chatbox;
+    public GameOverPanel over;
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("NPC"))
         {
             Debug.Log("Collision with NPC");
-            chatbox.SetActive(true);
-            // Do something
+            over.GameOver();
         }
     }
 }
