@@ -2,13 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 
 public class SlotMachineManager : MonoBehaviour
 {
     public GameObject panel;
     public RandomSlot[] slots;
-    public Button startButton;
+    //public Button startButton;
+    public Slider lever;
     public float spinDuration = 2f;
 
     [Header("win settings")]
@@ -18,14 +20,15 @@ public class SlotMachineManager : MonoBehaviour
 
     void Start()
     {
-        startButton.onClick.AddListener(startSpinning);
+        lever.onValueChanged.AddListener(delegate { startSpinning(); });
+        //startButton.onClick.AddListener(startSpinning);
     }
-    void startSpinning()
+    public void startSpinning()
     {
         if (!isSpinning)
         {
             isSpinning = true;
-            startButton.interactable = false;
+            //startButton.interactable = false;
             foreach (RandomSlot slot in slots)
             {
                 slot.StartRand();

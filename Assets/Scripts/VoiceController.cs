@@ -20,6 +20,7 @@ public class VoiceController : MonoBehaviour
         actions.Add("kill yourself", () => Debug.Log("killed"));
         actions.Add("stop", () => SetMovement(Vector2.zero));
         actions.Add("bridge", () => Bridge());
+        actions.Add("break", () => BreakWall());
 
         string[] keywords = new string[actions.Count];
         actions.Keys.CopyTo(keywords, 0);
@@ -58,4 +59,13 @@ public class VoiceController : MonoBehaviour
             bridge.GetComponent<Animation>().Play("bridge_anim");
         }
     }
-}
+
+    void BreakWall()
+    {
+        var wall = GameObject.Find("BreakableWall");
+        if (wall != null)
+        {
+            Destroy(wall);
+        }
+    }
+    }
