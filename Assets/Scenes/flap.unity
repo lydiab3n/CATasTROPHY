@@ -975,13 +975,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215100691}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.4079986, y: 0.27999997, z: 0}
-  m_LocalScale: {x: 13.067248, y: 0.48000002, z: 0.8}
+  m_LocalRotation: {x: -0, y: -0, z: 0.002642065, w: 0.99999654}
+  m_LocalPosition: {x: 5.36, y: 0.27, z: 0}
+  m_LocalScale: {x: 9.887203, y: 0.48000002, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1777397463}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.303}
 --- !u!212 &215100693
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2620,7 +2620,7 @@ Transform:
   m_GameObject: {fileID: 481208169}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.21, y: 0, z: 0}
+  m_LocalPosition: {x: 32, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3045,7 +3045,7 @@ Transform:
   m_GameObject: {fileID: 641296776}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.21, y: 0, z: 0}
+  m_LocalPosition: {x: 33.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3092,7 +3092,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 36.21, y: 0}
+  m_Offset: {x: 51.45649, y: -4.483678}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3102,7 +3102,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 11.256912, y: 1.5951786}
   m_EdgeRadius: 0
 --- !u!1 &685250158
 GameObject:
@@ -4737,7 +4737,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7738,8 +7738,8 @@ Transform:
   - {fileID: 36407117}
   - {fileID: 1756620409}
   - {fileID: 812531918}
-  - {fileID: 481208170}
   - {fileID: 1777397463}
+  - {fileID: 481208170}
   - {fileID: 641296777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
