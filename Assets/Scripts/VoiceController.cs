@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Windows.Speech;
 using System.Collections.Generic;
+using System.Globalization;
 
 public class VoiceController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class VoiceController : MonoBehaviour
         actions.Add("stop", () => SetMovement(Vector2.zero));
         actions.Add("bridge", () => Bridge());
         actions.Add("break", () => BreakWall());
+        actions.Add("cut", () => CutTree());
+        actions.Add("dig", () => Dig());
 
         string[] keywords = new string[actions.Count];
         actions.Keys.CopyTo(keywords, 0);
@@ -44,6 +47,7 @@ public class VoiceController : MonoBehaviour
             if (keywordRecognizer.IsRunning)
                 keywordRecognizer.Stop();
             keywordRecognizer.Dispose();
+            Debug.Log("done finished");
         }
     }
 
@@ -68,4 +72,23 @@ public class VoiceController : MonoBehaviour
             Destroy(wall);
         }
     }
+
+    void Dig()
+    {
+        var hole = GameObject.Find("Hole");
+        if (hole != null)
+        {
+            Destroy(hole);
+        }
     }
+
+    void CutTree()
+    {
+        var hole = GameObject.Find("Tree");
+        if (hole != null)
+        {
+            Destroy(hole);
+        }
+    }
+
+}
