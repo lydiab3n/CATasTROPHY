@@ -51,10 +51,62 @@ public class VoiceController : MonoBehaviour
         }
     }
 
+    /**
+     * Generic function to destroy the closest object with a given tag in front of the player
+     * @param tagName The tag of the objects to interact with
+     * @param range The maximum range to consider for interaction (10 by default)
+     **/
+    void DestroyClosest(string tagName, float range = 10f)
+    {
+        {
+            GameObject[] objects = GameObject.FindGameObjectsWithTag(tagName);
+            if (objects.Length == 0)
+                return;
+
+            GameObject closest = null;
+            float closestDist = Mathf.Infinity;
+            Vector3 playerPos = transform.position;
+
+            foreach (GameObject obj in objects)
+            {
+                float dist = Vector3.Distance(playerPos, obj.transform.position);
+                if (dist < closestDist && dist <= range)
+                {
+                    closestDist = dist;
+                    closest = obj;
+                }
+            }
+
+            if (closest != null)
+            {
+                Destroy(closest);
+                Debug.Log($"Destroyed closest {tagName}");
+            }
+        }
+    }
+
+
+
     void SetMovement(Vector2 direction)
     {
         playerController.voiceMovement = direction;
     }
+
+    void BreakWall()
+    {
+        DestroyClosest("BreakableWall");
+    }
+
+    void CutTree()
+    {
+        DestroyClosest("Tree");
+    }
+
+    void Dig()
+    {
+        DestroyClosest("Hole");
+    }
+
     void Bridge()
     {
         var bridge = GameObject.Find("Bridge");
@@ -64,6 +116,11 @@ public class VoiceController : MonoBehaviour
         }
     }
 
+
+
+
+
+    /*
     void BreakWall()
     {
         var wall = GameObject.Find("BreakableWall");
@@ -90,5 +147,6 @@ public class VoiceController : MonoBehaviour
             Destroy(hole);
         }
     }
+    */
 
 }

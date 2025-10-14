@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     // VOICE CONTROL
     [HideInInspector] public Vector2 voiceMovement = Vector2.zero;
 
+    // DIRECTION OF PLAYER
+    [HideInInspector] public Vector2 facingDirection = Vector2.down;
+
     void Start()
     {
         spriteRenderer = player.GetComponent<SpriteRenderer>();
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour
         // default facing down sprite
         if (downSprite != null)
             spriteRenderer.sprite = downSprite;
+        facingDirection = Vector2.down;
     }
 
     void Update()
@@ -49,6 +53,11 @@ public class PlayerController : MonoBehaviour
 
         updateSpriteDirection(horizontal, vertical);
         // voiceMovement = Vector2.zero; //reset
+
+        if (horizontal != 0 || vertical != 0)
+        {
+            facingDirection = new Vector2(horizontal, vertical).normalized;
+        }
     }
 
     void updateSpriteDirection(float horizontal, float vertical)
