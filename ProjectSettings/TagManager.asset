@@ -8,6 +8,10 @@ TagManager:
   - BreakableWall
   - Hole
   - Tree
+  - shovel
+  - hammer
+  - axe
+  - wing
   layers:
   - Default
   - TransparentFX

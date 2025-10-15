@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
 
     private SpriteRenderer spriteRenderer;
-    public Vector2 lastPosition;
+    public Vector3 lastPosition;
 
     public Sprite upSprite;
     public Sprite downSprite;
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontal, vertical, 0) * moveSpeed * Time.deltaTime;
         transform.position += movement;
-        lastPosition = this.transform.position;
+        lastPosition = transform.position;
 
         updateSpriteDirection(horizontal, vertical);
         // voiceMovement = Vector2.zero; //reset
@@ -97,5 +98,14 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = lastPosition;
         //maybe reset animations etc
+    }
+
+    public void goUp()
+    {
+        Vector3 movement = new Vector3(0, 100, 0) * moveSpeed * Time.deltaTime;
+        transform.position += movement;
+
+        updateSpriteDirection(1, 0);
+
     }
 }

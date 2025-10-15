@@ -1,7 +1,9 @@
-using UnityEngine;
-using UnityEngine.Windows.Speech;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Windows.Speech;
 
 public class VoiceController : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class VoiceController : MonoBehaviour
     private Dictionary<string, System.Action> actions = new Dictionary<string, System.Action>();
 
     private PlayerController playerController;
+    public Boolean hasShovel =false;
+    public Boolean hasAxe = false;
+    public Boolean hasWings = false;
+    public Boolean hasHammer = false;
 
     void Start()
     {
@@ -17,13 +23,13 @@ public class VoiceController : MonoBehaviour
         // TODO : add an if to check if jump and stop are already in the dictionary
 
 
-        actions.Add("jump", () => SetMovement(Vector2.up));
         actions.Add("kill yourself", () => Debug.Log("killed"));
         actions.Add("stop", () => SetMovement(Vector2.zero));
         actions.Add("bridge", () => Bridge());
         actions.Add("break", () => BreakWall());
         actions.Add("cut", () => CutTree());
         actions.Add("dig", () => Dig());
+        actions.Add("up", () => Up());
 
         string[] keywords = new string[actions.Count];
         actions.Keys.CopyTo(keywords, 0);
@@ -56,12 +62,15 @@ public class VoiceController : MonoBehaviour
      * @param tagName The tag of the objects to interact with
      * @param range The maximum range to consider for interaction (10 by default)
      **/
-    void DestroyClosest(string tagName, float range = 10f)
+    void DestroyClosest(string tagName, float range = 1000f)
     {
         {
             GameObject[] objects = GameObject.FindGameObjectsWithTag(tagName);
             if (objects.Length == 0)
+            {
+                Debug.Log("objects not found");
                 return;
+            }
 
             GameObject closest = null;
             float closestDist = Mathf.Infinity;
@@ -69,9 +78,11 @@ public class VoiceController : MonoBehaviour
 
             foreach (GameObject obj in objects)
             {
-                float dist = Vector3.Distance(playerPos, obj.transform.position);
+                float dist = Vector2.Distance(playerPos, obj.transform.position);
+                Debug.Log($"{obj.name} {dist <= range}");
                 if (dist < closestDist && dist <= range)
                 {
+                    Debug.Log("new closest");
                     closestDist = dist;
                     closest = obj;
                 }
@@ -92,19 +103,20 @@ public class VoiceController : MonoBehaviour
         playerController.voiceMovement = direction;
     }
 
-    void BreakWall()
+    public void BreakWall()
     {
         DestroyClosest("BreakableWall");
+        Gamepad.current.SetMotorSpeeds(0.123f, 0.234f);
     }
 
-    void CutTree()
+    public void CutTree()
     {
-        DestroyClosest("Tree");
+        if (hasAxe) { DestroyClosest("Tree"); }
     }
 
     void Dig()
     {
-        DestroyClosest("Hole");
+        if (hasShovel) { DestroyClosest("Hole"); }
     }
 
     void Bridge()
@@ -114,10 +126,15 @@ public class VoiceController : MonoBehaviour
         {
             bridge.GetComponent<Animation>().Play("bridge_anim");
         }
+        Gamepad.current.SetMotorSpeeds(0, 0);
+
     }
 
 
-
+    public void Up()
+    {
+        if(hasWings) playerController.goUp();
+    }
 
 
     /*
