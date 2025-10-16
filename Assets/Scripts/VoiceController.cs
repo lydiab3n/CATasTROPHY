@@ -11,10 +11,11 @@ public class VoiceController : MonoBehaviour
     private Dictionary<string, System.Action> actions = new Dictionary<string, System.Action>();
 
     private PlayerController playerController;
-    public Boolean hasShovel =false;
+    public Boolean hasShovel = false;
     public Boolean hasAxe = false;
     public Boolean hasWings = false;
     public Boolean hasHammer = false;
+    public AudioLoudnessDetection ald;
 
     void Start()
     {
@@ -29,7 +30,8 @@ public class VoiceController : MonoBehaviour
         actions.Add("break", () => BreakWall());
         actions.Add("cut", () => CutTree());
         actions.Add("dig", () => Dig());
-        actions.Add("up", () => Up());
+        actions.Add("fly", () => Fly());
+        actions.Add("fall", () => Fall());
 
         string[] keywords = new string[actions.Count];
         actions.Keys.CopyTo(keywords, 0);
@@ -131,10 +133,17 @@ public class VoiceController : MonoBehaviour
     }
 
 
-    public void Up()
+    public void Fly()
     {
-        if(hasWings) playerController.goUp();
+        if (hasWings)
+        {
+            ald.StartCoroutine("StartListening");
+        }
     }
+
+    public void Fall() {
+        if (hasWings){ ald.StopListening(); }
+      }
 
 
     /*

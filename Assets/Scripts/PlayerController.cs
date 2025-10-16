@@ -108,4 +108,13 @@ public class PlayerController : MonoBehaviour
         updateSpriteDirection(1, 0);
 
     }
+
+    public void goUp(float value)
+    {
+        Vector3 movement = new Vector3(0, value, 0) * moveSpeed * Time.deltaTime;
+        transform.position += movement;
+
+        updateSpriteDirection(1, 0);
+
+    }
 }
