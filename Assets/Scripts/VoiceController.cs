@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows.Speech;
@@ -31,7 +32,6 @@ public class VoiceController : MonoBehaviour
         actions.Add("cut", () => CutTree());
         actions.Add("dig", () => Dig());
         actions.Add("fly", () => Fly());
-        actions.Add("fall", () => Fall());
 
         string[] keywords = new string[actions.Count];
         actions.Keys.CopyTo(keywords, 0);
@@ -107,8 +107,11 @@ public class VoiceController : MonoBehaviour
 
     public void BreakWall()
     {
-        DestroyClosest("BreakableWall");
-        Gamepad.current.SetMotorSpeeds(0.123f, 0.234f);
+        if (hasHammer)
+        {
+            DestroyClosest("BreakableWall");
+            StartCoroutine(Vibrate(1, 1, 1));
+        }
     }
 
     public void CutTree()
@@ -137,13 +140,17 @@ public class VoiceController : MonoBehaviour
     {
         if (hasWings)
         {
-            ald.StartCoroutine("StartListening");
+            playerController.goUp();
         }
     }
 
-    public void Fall() {
-        if (hasWings){ ald.StopListening(); }
-      }
+    public IEnumerator Vibrate(float lowFrequency, float highFrequency, float seconds)
+    {
+        Gamepad.current.SetMotorSpeeds(lowFrequency, highFrequency);
+        yield return new WaitForSeconds(seconds);
+        Gamepad.current.SetMotorSpeeds(0, 0);
+    }
+
 
 
     /*
