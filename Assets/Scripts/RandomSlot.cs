@@ -17,7 +17,6 @@ public class RandomSlot : MonoBehaviour
 
     void RandomingImage()
     {
-
         gameObject.GetComponent<UnityEngine.UI.Image>().sprite = sprites[Random.Range(0, sprites.Length)];
     }
 
@@ -34,7 +33,6 @@ public class RandomSlot : MonoBehaviour
     }
     public void StartRand()
     {
-
         enabled = true;
     }
 }

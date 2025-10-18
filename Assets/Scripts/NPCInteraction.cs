@@ -6,11 +6,13 @@ public class NPCInteraction : MonoBehaviour
 {
     public GameOverPanel over;
     public VoiceController vc;
+    public PlayerController pc;
     private String text_cut ="You have obtained the axe! You can now cut trees by saying 'cut'.";
     private String text_dig= "You have obtained the shovel! You can now dig by saying 'dig'.";
     private String text_fly = "You have obtained the wings! You can now fly by saying 'up'.";
     private String text_break = "You have obtained the hammer! You can now break walls by saying 'break'.";
     [SerializeField] public TMP_Text label;
+    [SerializeField] private TMP_Text auraLabel;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -48,6 +50,12 @@ public class NPCInteraction : MonoBehaviour
             collision.gameObject.SetActive(false);
             vc.hasWings = true;
             StartCoroutine(TypeWriterEffect(text_break));
+        }
+        if(collision.gameObject.CompareTag("aura"))
+        {
+            auraLabel.text = "Aura Points: " + (pc.auraPoints + 1).ToString();
+           collision.gameObject.SetActive(false);
+            Debug.Log("Aura Points: " + pc.auraPoints);
         }
     }
     void OnTriggerEnter2D(Collider2D collision)

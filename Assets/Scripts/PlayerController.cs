@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
 
     public GameObject player;
+    public int auraPoints = 0;
 
     private SpriteRenderer spriteRenderer;
     public Vector3 lastPosition;
