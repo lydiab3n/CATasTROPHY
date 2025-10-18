@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 86e49799a567a3f4fb3c16436dddc52a
+guid: 66e4d932b3127324b8d0baa1c3595745
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4019088320933149833
-    second: dog3_0
+      213: 2912297781628502651
+    second: pixil-frame-0 (4)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dog3_0
+      name: pixil-frame-0 (4)_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 72
-        width: 202
-        height: 216
+        x: 1271
+        y: 3285
+        width: 3182
+        height: 532
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 773cbd557745938c0800000000000000
-      internalID: -4019088320933149833
+      spriteID: b720022076f8a6820800000000000000
+      internalID: 2912297781628502651
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      dog3_0: -4019088320933149833
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 86e49799a567a3f4fb3c16436dddc52a
+guid: c6114b73a6689b648b10af519a6f0e45
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4019088320933149833
-    second: dog3_0
+      213: -165668901869427220
+    second: boldpixelsx1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dog3_0
+      name: boldpixelsx1_0
       rect:
         serializedVersion: 2
-        x: 79
-        y: 72
-        width: 202
-        height: 216
+        x: 0
+        y: 0
+        width: 145
+        height: 1565
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 773cbd557745938c0800000000000000
-      internalID: -4019088320933149833
+      spriteID: ce56eb1f20d63bdf0800000000000000
+      internalID: -165668901869427220
       vertices: []
       indices: 
       edges: []
@@ -161,9 +148,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      dog3_0: -4019088320933149833
+      boldpixelsx1_0: -165668901869427220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 332078
+  packageName: BoldPixels
+  packageVersion: 1.5.0
+  assetPath: Assets/BoldPixels/Assets/font/boldpixelsx1.png
+  uploadId: 785910

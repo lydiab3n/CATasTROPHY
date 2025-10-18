@@ -12,6 +12,7 @@ TagManager:
   - hammer
   - axe
   - wing
+  - audio
   layers:
   - Default
   - TransparentFX

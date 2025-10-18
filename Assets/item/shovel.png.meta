@@ -195,6 +195,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -959,7 +985,41 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shovel_0: -3766519690804746565
+      shovel_1: 1561744515682506265
+      shovel_10: -7399590824105110155
+      shovel_11: -1857477151912576620
+      shovel_12: -5352904928894679764
+      shovel_13: 1132871643137948314
+      shovel_14: -37813018896649984
+      shovel_15: 4392109630858918481
+      shovel_16: 8067255929124862267
+      shovel_17: -2158124301365688370
+      shovel_18: 2157762624995951952
+      shovel_19: -4921938845589908000
+      shovel_2: 5609685118542978755
+      shovel_20: 2745828106538793711
+      shovel_21: 8778259873681114256
+      shovel_22: -4061004556093875214
+      shovel_23: -248926475175412382
+      shovel_24: 6783198928197749811
+      shovel_25: -5380794612873232966
+      shovel_26: -3280609749742964468
+      shovel_27: -3313263225159772977
+      shovel_28: 4140443363412270765
+      shovel_29: 8472343624481744720
+      shovel_3: 431514570762737072
+      shovel_30: 7247726200665384819
+      shovel_31: 746719857396969653
+      shovel_32: -5616313553054272835
+      shovel_33: 3827465516176105673
+      shovel_4: 1416214521780635393
+      shovel_5: -47632568810815522
+      shovel_6: -951520451967887342
+      shovel_7: -1622772438737804104
+      shovel_8: 8375649141037578036
+      shovel_9: 4455328669200548445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
