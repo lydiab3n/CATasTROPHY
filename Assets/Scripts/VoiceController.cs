@@ -82,6 +82,8 @@ public class VoiceController : MonoBehaviour
             {
                 float dist = Vector2.Distance(playerPos, obj.transform.position);
                 Debug.Log($"{obj.name} {dist <= range}");
+                Debug.Log($"{obj.name} at {obj.transform.position}");
+
                 if (dist < closestDist && dist <= range)
                 {
                     Debug.Log("new closest");

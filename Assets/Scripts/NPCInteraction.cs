@@ -48,7 +48,7 @@ public class NPCInteraction : MonoBehaviour
         {
             Debug.Log("Collision with hammer");
             collision.gameObject.SetActive(false);
-            vc.hasWings = true;
+            vc.hasHammer = true;
             StartCoroutine(TypeWriterEffect(text_break));
         }
         if(collision.gameObject.CompareTag("aura"))
