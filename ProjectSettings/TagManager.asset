@@ -14,6 +14,7 @@ TagManager:
   - wing
   - audio
   - aura
+  - wifey
   layers:
   - Default
   - TransparentFX

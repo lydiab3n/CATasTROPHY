@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using System;
@@ -56,6 +57,10 @@ public class NPCInteraction : MonoBehaviour
             auraLabel.text = "Aura Points: " + (pc.auraPoints + 1).ToString();
            collision.gameObject.SetActive(false);
             Debug.Log("Aura Points: " + pc.auraPoints);
+        }
+        if(collision.gameObject.CompareTag("wifey"))
+        {
+            SceneManager.LoadScene("ending");
         }
     }
     void OnTriggerEnter2D(Collider2D collision)

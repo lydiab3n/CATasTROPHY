@@ -142,7 +142,11 @@ public class VoiceController : MonoBehaviour
     {
         if (hasWings)
         {
-            playerController.goUp();
+            var player = GameObject.Find("Player");
+            if (player != null)
+            {
+                player.GetComponent<Animation>().Play("fly");
+            }
         }
     }
 

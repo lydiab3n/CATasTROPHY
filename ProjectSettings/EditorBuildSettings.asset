@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scripts/Scenes/SlotMachine.unity
     guid: 5285158f8c34d7141b3229bf67a7ab1f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scripts/Scenes/flap.unity
     guid: f244c6c1cd438e1468b844a718aecdba
+  - enabled: 1
+    path: Assets/Scenes/flap.unity
+    guid: e14ed9297b1e6c94292cd11989134720
+  - enabled: 1
+    path: Assets/Scenes/ending.unity
+    guid: 147f7bf714d0e1d4e8f31758f33a8c49
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
