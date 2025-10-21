@@ -7,11 +7,14 @@ public class RandomSlot : MonoBehaviour
 {
 
     public Sprite[] sprites;
-    public float StopTime;
-
+    public float stopTime;
+    private bool isSpinning = false;
     void Update()
     {
-        RandomingImage();
+        if (isSpinning)
+        {
+            RandomingImage();
+        }
 
     }
 
@@ -28,11 +31,19 @@ public class RandomSlot : MonoBehaviour
     public void StopRand()
     {
 
-        Invoke("EndRand", StopTime);
+        if (isSpinning)
+        {
+            StartCoroutine(StopAfterDelay());
+        }
 
+    }
+    IEnumerator StopAfterDelay()
+    {
+        yield return new WaitForSeconds(stopTime);
+        isSpinning = false;
     }
     public void StartRand()
     {
-        enabled = true;
+        isSpinning = true;
     }
 }

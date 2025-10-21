@@ -38,17 +38,19 @@ public class TypewriterEffect : MonoBehaviour
         else
         {
             yield return StartCoroutine(TypeWriterEffect("Trophywife : Ew, no... I can feel the darkness around you."));
+            GameObject.FindGameObjectWithTag("womp").GetComponent<AudioSource>().Play();
         }
 
-            yield return new WaitForSeconds(lineDelay);
+            yield return new WaitForSeconds(lineDelay + 3f);
         }
         else
         {
-        yield return StartCoroutine(TypeWriterEffect("Trophywife : Cowcar... Is that you?"));
-        yield return new WaitForSeconds(lineDelay);
-        yield return StartCoroutine(TypeWriterEffect("Cowcat : WIFEY!!! I will come save you no matter what!"));
-        yield return new WaitForSeconds(lineDelay);
-        StartGame.SetActive(true);
+            yield return StartCoroutine(TypeWriterEffect("Trophywife : Cowcar... Is that you?"));
+            yield return new WaitForSeconds(lineDelay);
+            yield return StartCoroutine(TypeWriterEffect("Cowcat : WIFEY!!! I will come save you no matter what!"));
+            yield return new WaitForSeconds(lineDelay);
+            StartGame.SetActive(true);
+        
         }
         
     }
