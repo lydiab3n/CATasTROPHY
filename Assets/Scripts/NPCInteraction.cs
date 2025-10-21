@@ -62,6 +62,8 @@ public class NPCInteraction : MonoBehaviour
             auraLabel.text = "Aura Points: " + (pc.auraPoints).ToString();
            collision.gameObject.SetActive(false);
             Debug.Log("Aura Points: " + pc.auraPoints);
+            PlayerPrefs.SetInt("AuraPoints", pc.auraPoints);
+
         }
         if(collision.gameObject.CompareTag("wifey"))
         {

@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
     }
     public void startOver()
     {
-        SceneManager.LoadScene("flap");
+        SceneManager.LoadScene("main");
     }
 
     public void goUp()

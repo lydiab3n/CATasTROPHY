@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scripts/Scenes/flap.unity
     guid: f244c6c1cd438e1468b844a718aecdba
   - enabled: 1
-    path: Assets/Scenes/flap.unity
+    path: Assets/Scenes/main.unity
     guid: e14ed9297b1e6c94292cd11989134720
   - enabled: 1
     path: Assets/Scenes/ending.unity

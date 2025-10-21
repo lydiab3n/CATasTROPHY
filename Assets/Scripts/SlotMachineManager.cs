@@ -82,7 +82,7 @@ public class SlotMachineManager : MonoBehaviour
         {
             Debug.Log("boo loser. restarting game.");
             //PlayerPrefs.SetInt("SecondChance", 0);
-            SceneManager.LoadScene("flap");
+            SceneManager.LoadScene("main");
 
         }
 
