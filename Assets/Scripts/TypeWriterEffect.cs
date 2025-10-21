@@ -49,10 +49,9 @@ public class TypewriterEffect : MonoBehaviour
             yield return new WaitForSeconds(lineDelay);
             yield return StartCoroutine(TypeWriterEffect("Cowcat : WIFEY!!! I will come save you no matter what!"));
             yield return new WaitForSeconds(lineDelay);
-            StartGame.SetActive(true);
         
         }
-        
+         StartGame.SetActive(true);
     }
 
     private IEnumerator TypeWriterEffect(string txt)
