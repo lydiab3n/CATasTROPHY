@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerController : MonoBehaviour
@@ -31,11 +32,6 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.sprite = downSprite;
         facingDirection = Vector2.down;
     }
-    void Awake()
-    {
-        DontDestroyOnLoad(this);
-    }
-
     void Update()
     {
         // switching between voice & keyboard
@@ -101,8 +97,16 @@ public class PlayerController : MonoBehaviour
 
     public void respawnAtCheckpoint()
     {
+        if(lastPosition == null)
+        {
+            lastPosition = new Vector3(-21, -2, 0); //pos de départ 
+        }
         player.transform.position = lastPosition;
         //maybe reset animations etc
+    }
+    public void startOver()
+    {
+        SceneManager.LoadScene("flap");
     }
 
     public void goUp()

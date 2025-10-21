@@ -6,7 +6,9 @@ using System;
 public class NPCInteraction : MonoBehaviour
 {
     public GameOverPanel over;
+    public GameObject over2;
     public VoiceController vc;
+    public SlotMachineManager mg;
     public PlayerController pc;
     private String text_cut ="You have obtained the axe! You can now cut trees by saying 'cut'.";
     private String text_dig= "You have obtained the shovel! You can now dig by saying 'dig'.";
@@ -20,7 +22,9 @@ public class NPCInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("NPC"))
         {
             Debug.Log("Collision with NPC");
-            over.GameOver();
+            if (!mg.chanceUsed) over.GameOver();
+            else over2.SetActive(true);
+                        
         }
         
         if (collision.gameObject.CompareTag("axe"))

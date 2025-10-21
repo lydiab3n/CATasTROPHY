@@ -17,6 +17,7 @@ public class SlotMachineManager : MonoBehaviour
     public int winningIndex = 0; // index of the sprite considered a win
 
     private bool isSpinning = false;
+    public bool chanceUsed = false;
     public PlayerController player;
     public SliderLimitation leverLim;
 
@@ -47,7 +48,7 @@ public class SlotMachineManager : MonoBehaviour
         {
             slot.StopRand();
         }
-        yield return new WaitForSeconds(0.1f); // delay
+        yield return new WaitForSeconds(1f); // delay
 
 
         checkWinCondition();
@@ -67,15 +68,15 @@ public class SlotMachineManager : MonoBehaviour
             }
         }
 
-        if (! allMatch)
+        if (!allMatch) //#TODO CHANGE
         {
             Debug.Log("you win! second chance!");
             //PlayerPrefs.SetInt("SecondChance", 1);
-            player.respawnAtCheckpoint();
             panel.SetActive(false);
-            isSpinning = false;
             leverLim.reset = true;
             lever.value = 0;
+            chanceUsed = true;
+            player.respawnAtCheckpoint();
         }
         else
         {
@@ -84,7 +85,6 @@ public class SlotMachineManager : MonoBehaviour
             SceneManager.LoadScene("flap");
 
         }
-
 
 
     }
