@@ -7,6 +7,8 @@ public class TypewriterEffect : MonoBehaviour
     [SerializeField] private TMP_Text label;
     [SerializeField] private float delay = 0.05f; //delay between each character
     [SerializeField] private float lineDelay = 1f; //delay between lines
+    [SerializeField] private float dialogueDelay = 2f;
+    [SerializeField] private VoiceController vc;
 
     void Start()
     {
@@ -22,6 +24,8 @@ public class TypewriterEffect : MonoBehaviour
         yield return new WaitForSeconds(lineDelay);
 
         yield return StartCoroutine(TypeWriterEffect("I will never let you go..."));
+
+        yield return new WaitForSeconds(lineDelay);
     }
 
     private IEnumerator TypeWriterEffect(string txt)

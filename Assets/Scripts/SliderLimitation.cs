@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class SliderLimitation : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class SliderLimitation : MonoBehaviour
     Slider slider;
 
     float currentValue;
+
+    public Boolean reset=false;
 
     void Start()
     {
@@ -19,7 +22,7 @@ public class SliderLimitation : MonoBehaviour
 
     public void ListenerMethod(float value)
     {
-        if (value < currentValue)
+        if (!reset && value < currentValue)
             slider.value = currentValue;
         else
             currentValue = value;

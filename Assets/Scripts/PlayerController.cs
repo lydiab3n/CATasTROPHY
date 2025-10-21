@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.sprite = downSprite;
         facingDirection = Vector2.down;
     }
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
 
     void Update()
     {
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontal, vertical, 0) * moveSpeed * Time.deltaTime;
         transform.position += movement;
-        lastPosition = transform.position;
+       // lastPosition = transform.position;
 
         updateSpriteDirection(horizontal, vertical);
         // voiceMovement = Vector2.zero; //reset
@@ -97,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     public void respawnAtCheckpoint()
     {
-        transform.position = lastPosition;
+        player.transform.position = lastPosition;
         //maybe reset animations etc
     }
 

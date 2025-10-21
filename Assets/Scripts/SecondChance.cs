@@ -15,6 +15,7 @@ public class SecondChance : MonoBehaviour
             var player = FindFirstObjectByType<PlayerController>();
             if (player != null)
             {
+                Debug.Log(player.lastPosition);
                 player.respawnAtCheckpoint();
             }
         }

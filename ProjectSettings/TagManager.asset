@@ -15,6 +15,7 @@ TagManager:
   - audio
   - aura
   - wifey
+  - checkpoint
   layers:
   - Default
   - TransparentFX

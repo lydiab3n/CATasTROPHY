@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      flyingcat_tabby_0: 6745349335249056435
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

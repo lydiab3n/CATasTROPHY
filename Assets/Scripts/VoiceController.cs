@@ -11,7 +11,7 @@ public class VoiceController : MonoBehaviour
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, System.Action> actions = new Dictionary<string, System.Action>();
 
-    private PlayerController playerController;
+    public PlayerController playerController;
     public Boolean hasShovel = false;
     public Boolean hasAxe = false;
     public Boolean hasWings = false;
@@ -112,18 +112,28 @@ public class VoiceController : MonoBehaviour
         if (hasHammer)
         {
             DestroyClosest("BreakableWall");
-            StartCoroutine(Vibrate(1, 1, 1));
+            StartCoroutine(Vibrate(1, 1, 0.7f));
         }
     }
 
     public void CutTree()
     {
-        if (hasAxe) { DestroyClosest("Tree"); }
+        if (hasAxe)
+        {
+            DestroyClosest("Tree");
+            StartCoroutine(Vibrate(0.5f, 0.6f, 0.3f));
+        }
+
     }
 
     void Dig()
     {
-        if (hasShovel) { DestroyClosest("Hole"); }
+        if (hasShovel) 
+        { 
+            DestroyClosest("Hole"); 
+            StartCoroutine(Vibrate(0.5f, 0.6f, 1.2f));
+        }
+
     }
 
     void Bridge()
@@ -134,7 +144,7 @@ public class VoiceController : MonoBehaviour
             bridge.GetComponent<Animation>().Play("bridge_anim");
         }
         Gamepad.current.SetMotorSpeeds(0, 0);
-
+        StartCoroutine(Vibrate(0.3f, 0.4f, 0.8f));
     }
 
 
