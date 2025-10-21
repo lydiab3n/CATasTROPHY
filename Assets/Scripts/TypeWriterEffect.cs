@@ -45,7 +45,7 @@ public class TypewriterEffect : MonoBehaviour
         }
         else
         {
-            yield return StartCoroutine(TypeWriterEffect("Trophywife : Cowcar... Is that you?"));
+            yield return StartCoroutine(TypeWriterEffect("Trophywife : Cowcat... Is that you?"));
             yield return new WaitForSeconds(lineDelay);
             yield return StartCoroutine(TypeWriterEffect("Cowcat : WIFEY!!! I will come save you no matter what!"));
             yield return new WaitForSeconds(lineDelay);

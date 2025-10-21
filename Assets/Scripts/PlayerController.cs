@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
     public void respawnAtCheckpoint()
     {
-        if(lastPosition == null)
+        if(lastPosition == new Vector3(0,0,0))
         {
             lastPosition = new Vector3(-21, -2, 0); //pos de départ 
         }
