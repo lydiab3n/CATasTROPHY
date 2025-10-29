@@ -76,7 +76,7 @@ public class SlotMachineManager : MonoBehaviour
             }
         }
 
-        if (!allMatch) //#TODO CHANGE
+        if (allMatch) //#TODO CHANGE
         {
             Debug.Log("you win! second chance!");
             //PlayerPrefs.SetInt("SecondChance", 1);
