@@ -15,6 +15,17 @@ CATasTROPHY is an interactive 2D platformer game where you play as a cowboy cat 
 
 The world displayed on the screen is linear, and the camera follows the player. To move or jump, simply press the arrows on your keyboard. If faced with an unavoidable obstacle, try to use a voice command : the system will detect the word and react accordingly by disposing of the object blocking your way. Falling into the water or colliding with enemies will be fatal to you : however, with the power of love, you'll be given a second chance through the Slot Machine of Fate. With a simple drag motion performed with the mouse, you can then pull the lever down and gamble for another chance! If lucky enough, you'll be teleported back to the nearest checkpoint; if not, it’s game over and you'll have to start from the beginning. Avoid obstacles and finish the level to claim your beloved cat as a trophy !
 
+
+## User Manual
+
+As our game was developed with the Unity Game Engine, launching it is pretty straightforward. You only need to follow the steps below :
+_**Prerequisite :**_ you need to have the Unity Game Engine installed on your machine, ideally with the version 6000.0.32f1 or a later one !
+1. Download the ZIP archive and extract the folder OR clone the Git repository locally
+2. Open the Unity Hub and load the folder
+3. Simply open the Unity Project, open the Scenes folder and double click on the scene called “debut” 
+4. go into game mode, make sure the screen view is set to QHD (2560x1440) and start playing !!
+
+
 ## Tools
 
 We’re building our small platformer game using the Unity Game engine, paired with C# to write our scripts. We chose to use Unity because it allows us to combine coding with seamless and easier to manage visuals. Unity’s visual editor and physics system makes it a lot simpler to create and test a game with realistic gravity, collisions, and animations. 
